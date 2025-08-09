@@ -1,5 +1,3 @@
-package test_plants;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.time.Duration;
@@ -32,14 +30,14 @@ public class TestPlants {
 		assertEquals("E-Plant", title, "Site name error");
 
 		List<WebElement> categories = driver.findElements(By.cssSelector(".product-grid > div"));
-		assertEquals(categories.size(), 5, "Product grid size error");
-		assertEquals(categories.get(0).findElement(By.cssSelector("h1")).getAttribute("innerHTML"), "Air Purifying Plants", "Air purifying plants name error");
+		assertEquals(5, categories.size(), "Product grid size error");
+		assertEquals("Air Purifying Plants", categories.get(0).findElement(By.cssSelector("h1")).getAttribute("innerHTML"), "Air purifying plants name error");
 
 		List<WebElement> lmps = categories.get(4).findElements(By.cssSelector(".product-card"));
-		assertEquals(lmps.size(), 6, "Low maintenance plants size error");
+		assertEquals(6, lmps.size(), "Low maintenance plants size error");
 
 		WebElement zz = lmps.get(0).findElement(By.cssSelector(".product-title"));
-		assertEquals(zz.getAttribute("innerHTML"), "ZZ-Plant", "ZZ plant name error");
+		assertEquals("ZZ Plant", zz.getAttribute("innerHTML"), "ZZ plant name error");
 
 	}
 
